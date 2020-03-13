@@ -40,8 +40,23 @@
 	$params = array(
 	);
 	
-
-	echo json_encode((new User($_SESSION['id']))->getAdAccounts(
+	$getAdAccounts = (new User($_SESSION['id']))->getAdAccounts(
 	  $fields,
 	  $params
-	)->getResponse()->getContent(), JSON_PRETTY_PRINT);
+	)->getResponse()->getContent();
+
+	if(isset($getAdAccounts) && !empty($getAdAccounts) && isset($getAdAccounts['data']) && sizeof($getAdAccounts['data']) > 0)
+	{
+		foreach ($getAdAccounts['data'] as $keyUR => $valueUR) 
+		{
+			$account_id = $valueUR['id'];
+		}
+	}
+
+	/*$getAdAccounts = json_encode((new User($_SESSION['id']))->getAdAccounts(
+	  $fields,
+	  $params
+	)->getResponse()->getContent(), JSON_PRETTY_PRINT);*/
+
+
+	

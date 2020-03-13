@@ -95,8 +95,8 @@
 	$_SESSION['id'] = $result['id'];
 
 	echo "<br>";
-	$marketingUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . 'marketing_details.php';
-	echo '<a href="' . htmlspecialchars($marketingUrl) . '">Marketing Details!</a>';
+	$marketingUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/' . basename(__DIR__) . '/marketing_details.php';
+	echo 'If you want to see your marketing details. Please click here    <a href="' . htmlspecialchars($marketingUrl) . '">Marketing Details!</a>';
 	die();
 	$me = $response->getGraphUser();
 
