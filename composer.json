@@ -1,0 +1,6 @@
+{
+    "require": {
+        "facebook/graph-sdk": "^5.7",
+        "facebook/php-business-sdk": "6.0.1"
+    }
+}
